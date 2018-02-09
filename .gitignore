@@ -1,0 +1,11 @@
+.DS_Store
+npm-debug.log
+__tests__
+bin/Debug/
+bin/Release/
+packages
+build/
+*.exe
+.vs
+Debug/
+Release/

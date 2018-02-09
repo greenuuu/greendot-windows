@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84529DA0-A4B4-4258-A1C6-26E093170C5C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ShadowSocks</RootNamespace>
+    <AssemblyName>greendot-windows</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GlobalHotKey, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlobalHotKey.1.1.0\lib\GlobalHotKey.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.2.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.2\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.2.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.2\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\Constants.cs" />
+    <Compile Include="Controller\FileManager.cs" />
+    <Compile Include="Controller\I18N.cs" />
+    <Compile Include="Controller\Logging.cs" />
+    <Compile Include="Controller\Service\AvailabilityStatistics.cs" />
+    <Compile Include="Controller\Service\GfwListUpdater.cs" />
+    <Compile Include="Controller\Service\Listener.cs" />
+    <Compile Include="Controller\Service\PACServer.cs" />
+    <Compile Include="Controller\Service\PortForwarder.cs" />
+    <Compile Include="Controller\Service\PrivoxyRunner.cs" />
+    <Compile Include="Controller\Service\Sip003Plugin.cs" />
+    <Compile Include="Controller\Service\TCPRelay.cs" />
+    <Compile Include="Controller\Service\UDPRelay.cs" />
+    <Compile Include="Controller\Service\UpdateChecker.cs" />
+    <Compile Include="Controller\ShadowsocksController.cs" />
+    <Compile Include="Controller\Strategy\BalancingStrategy.cs" />
+    <Compile Include="Controller\Strategy\HighAvailabilityStrategy.cs" />
+    <Compile Include="Controller\Strategy\IStrategy.cs" />
+    <Compile Include="Controller\Strategy\StatisticsStrategy.cs" />
+    <Compile Include="Controller\Strategy\StrategyManager.cs" />
+    <Compile Include="Controller\System\AutoStartup.cs" />
+    <Compile Include="Controller\System\Hotkeys\HotkeyCallbacks.cs" />
+    <Compile Include="Controller\System\Hotkeys\Hotkeys.cs" />
+    <Compile Include="Controller\System\SystemProxy.cs" />
+    <Compile Include="Encryption\AEAD\AEADEncryptor.cs" />
+    <Compile Include="Encryption\AEAD\AEADMbedTLSEncryptor.cs" />
+    <Compile Include="Encryption\AEAD\AEADSodiumEncryptor.cs" />
+    <Compile Include="Encryption\CircularBuffer\ByteCircularBuffer.cs" />
+    <Compile Include="Encryption\DES.cs" />
+    <Compile Include="Encryption\EncryptorBase.cs" />
+    <Compile Include="Encryption\EncryptorFactory.cs" />
+    <Compile Include="Encryption\Exception\CryptoException.cs" />
+    <Compile Include="Encryption\IEncryptor.cs" />
+    <Compile Include="Encryption\MbedTLS.cs" />
+    <Compile Include="Encryption\RNG.cs" />
+    <Compile Include="Encryption\Sodium.cs" />
+    <Compile Include="Encryption\Stream\StreamEncryptor.cs" />
+    <Compile Include="Encryption\Stream\StreamMbedTLSEncryptor.cs" />
+    <Compile Include="Encryption\Stream\StreamSodiumEncryptor.cs" />
+    <Compile Include="Exceptions\AlleyException.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Model\SiteConfig.cs" />
+    <Compile Include="Model\Configuration.cs" />
+    <Compile Include="Model\HotKeyConfig.cs" />
+    <Compile Include="Model\LogViewerConfig.cs" />
+    <Compile Include="Model\ProxyConfig.cs" />
+    <Compile Include="Model\Server.cs" />
+    <Compile Include="Model\ServerNode.cs" />
+    <Compile Include="Model\StatisticsRecord.cs" />
+    <Compile Include="Model\StatisticsStrategyConfiguration.cs" />
+    <Compile Include="Model\SysproxyConfig.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\DirectConnect.cs" />
+    <Compile Include="Proxy\HttpProxy.cs" />
+    <Compile Include="Proxy\IProxy.cs" />
+    <Compile Include="Proxy\Socks5Proxy.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StringEx.cs" />
+    <Compile Include="Util\DateHelper.cs" />
+    <Compile Include="Util\ProcessManagement\Job.cs" />
+    <Compile Include="Util\ProcessManagement\ThreadUtil.cs" />
+    <Compile Include="Util\Request.cs" />
+    <Compile Include="Util\Sockets\LineReader.cs" />
+    <Compile Include="Util\Sockets\SocketUtil.cs" />
+    <Compile Include="Util\Sockets\WrappedSocket.cs" />
+    <Compile Include="Util\SystemProxy\INTERNET_OPTION.cs" />
+    <Compile Include="Util\SystemProxy\INTERNET_PER_CONN_OPTION.cs" />
+    <Compile Include="Util\SystemProxy\INTERNET_PER_CONN_OPTION_LIST.cs" />
+    <Compile Include="Util\SystemProxy\NativeMethods.cs" />
+    <Compile Include="Util\SystemProxy\ProxyException.cs" />
+    <Compile Include="Util\SystemProxy\RAS.cs" />
+    <Compile Include="Util\SystemProxy\Sysproxy.cs" />
+    <Compile Include="Util\SystemProxy\WinINet.cs" />
+    <Compile Include="Util\Util.cs" />
+    <Compile Include="Util\ValidateHelper.cs" />
+    <Compile Include="Util\ViewUtils.cs" />
+    <Compile Include="View\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Notice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notice.Designer.cs">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuViewController.cs" />
+    <Compile Include="View\ViewManager.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Notice.resx">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Data\abp.js.gz" />
+    <None Include="Data\libsscrypto.dll.gz" />
+    <None Include="Data\mgwz.dll.gz" />
+    <None Include="Data\privoxy.exe.gz" />
+    <None Include="Data\proxy.pac.txt.gz" />
+    <None Include="Data\sysproxy.exe.gz" />
+    <None Include="Data\sysproxy64.exe.gz" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ShadowSocks.Model.StatisticsStrategyConfiguration.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-white.png" />
+    <None Include="Resources\logo48.png" />
+    <None Include="Resources\logo40.png" />
+    <None Include="Resources\logo32.png" />
+    <None Include="FodyWeavers.xml" />
+    <Content Include="Data\ja.txt" />
+    <Content Include="Data\privoxy_conf.txt" />
+    <Content Include="Data\user-rule.txt" />
+    <Content Include="Data\zh_CN.txt" />
+    <Content Include="Data\zh_TW.txt" />
+    <Content Include="logo.ico" />
+    <Content Include="logo.png" />
+    <Content Include="remark.txt" />
+    <Content Include="Resources\ico-in24.png" />
+    <Content Include="Resources\ico-out24.png" />
+    <None Include="Resources\ico_connecting.gif" />
+    <Content Include="Resources\ico_connection_stop.png" />
+    <Content Include="Resources\ico_loading.gif" />
+    <None Include="Resources\ico-vip.png" />
+    <Content Include="Resources\flag\flag-canada.png" />
+    <Content Include="Resources\flag\flag-china.png" />
+    <Content Include="Resources\flag\flag-finland.png" />
+    <Content Include="Resources\flag\flag-france.png" />
+    <Content Include="Resources\flag\flag-germany.png" />
+    <Content Include="Resources\flag\flag-hongkong.png" />
+    <Content Include="Resources\flag\flag-ireland.png" />
+    <Content Include="Resources\flag\flag-italy.png" />
+    <Content Include="Resources\flag\flag-japan.png" />
+    <Content Include="Resources\flag\flag-korea.png" />
+    <Content Include="Resources\flag\flag-norway.png" />
+    <Content Include="Resources\flag\flag-russia.png" />
+    <Content Include="Resources\flag\flag-spain.png" />
+    <Content Include="Resources\flag\flag-taiwan.png" />
+    <Content Include="Resources\flag\flag-uk.png" />
+    <Content Include="Resources\flag\flag-usa.png" />
+    <Content Include="Resources\flag\flag_holland.png" />
+    <Content Include="Resources\ico-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaterialSkin\MaterialSkin.csproj">
+      <Project>{8eb7611b-68cd-4b8b-987a-11717e2b250c}</Project>
+      <Name>MaterialSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
+</Project>
